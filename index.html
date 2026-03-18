@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brian Kipkurui for Men's Representative</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0047AB 0%, #FFD700 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        nav {
+            background-color: #0047AB;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #FFD700;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 3rem 0;
+            border-bottom: 3px solid #FFD700;
+        }
+
+        section h2 {
+            color: #0047AB;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #FFD700;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        /* About Section */
+        .about {
+            background-color: #f9f9f9;
+        }
+
+        .about-content {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 71, 171, 0.2);
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        /* Photo Gallery */
+        .gallery {
+            background-color: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .gallery-item {
+            background: #f0f0f0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 71, 171, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .gallery-item-caption {
+            padding: 1rem;
+            background-color: #0047AB;
+            color: white;
+            font-weight: 600;
+        }
+
+        /* Manifestos */
+        .manifestos {
+            background-color: #f9f9f9;
+        }
+
+        .manifesto-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .manifesto-card {
+            background: white;
+            padding: 1.5rem;
+            border-left: 5px solid #FFD700;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 71, 171, 0.1);
+        }
+
+        .manifesto-card h3 {
+            color: #0047AB;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Events */
+        .events {
+            background-color: white;
+        }
+
+        .events-list {
+            margin-top: 1.5rem;
+        }
+
+        .event-card {
+            background: linear-gradient(135deg, #f0f8ff 0%, #fffacd 100%);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 5px solid #0047AB;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 71, 171, 0.1);
+        }
+
+        .event-card h3 {
+            color: #0047AB;
+            margin-bottom: 0.5rem;
+        }
+
+        .event-date {
+            color: #FFD700;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Voter Registration Form */
+        .voter-form {
+            background: linear-gradient(135deg, #0047AB 0%, #FFD700 100%);
+            color: white;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 71, 171, 0.2);
+            margin-top: 1.5rem;
+        }
+
+        .form-container h3 {
+            color: #0047AB;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #0047AB;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #0047AB;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #FFD700;
+            box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+        }
+
+        button {
+            width: 100%;
+            padding: 0.75rem;
+            background: linear-gradient(135deg, #0047AB 0%, #FFD700 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        button:hover {
+            transform: scale(1.02);
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0047AB;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        .success-message {
+            display: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            text-align: center;
+            animation: slideDown 0.5s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .error-message {
+            display: none;
+            background-color: #f44336;
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>🇰🇪 Brian Kipkurui for Men's Representative</h1>
+        <p>Leadership • Vision • Service • Development</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#manifestos">Manifestos</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#voter-form">Join Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Brian Kipkurui</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="/home/kurui/Desktop/oraimo/image_1773206510388.jpeg" alt="Brian Kipkurui">
+                </div>
+                <div class="about-text">
+                    <h3 style="color: #0047AB; margin-bottom: 1rem;">Your Voice, Our Future</h3>
+                    <p style="margin-bottom: 1rem;">
+                        Brian Kipkurui is a dedicated public servant committed to representing the interests of all constituents in our community. With years of experience in community development and grassroots engagement, Brian has consistently demonstrated his commitment to creating meaningful change.
+                    </p>
+                    <p style="margin-bottom: 1rem;">
+                        His vision is to build a stronger, more inclusive community where every voice is heard and every person has the opportunity to thrive and succeed.
+                    </p>
+                    <p>
+                        Join us in this journey towards a better tomorrow. Together, we can make a difference!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>EVENTS</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="/home/kurui/Desktop/oraimo/Screenshot_20260316_225941_WhatsApp.jpg" alt="CTA RALLY">
+                    <p>HELLO WELCOME ALL TO CTA RALLY </p>
+                    <div class="gallery-item-caption">CTA RALLY</div>
+                
+    </section>
+
+    <!-- Manifestos -->
+    <section id="manifestos" class="manifestos">
+        <div class="container">
+            <h2>Our Manifestos & Promises</h2>
+            <div class="manifesto-grid">
+                <div class="manifesto-card">
+                    <h3>EMPOWERING MEN IN TECH</h3>
+                    <p>
+                        I will empower fellow men by providing them  technical upskilling and also management training ,executive coching  speciffically  designed for technical proffessional  transitioning  into leadership roles
+                    </p>
+                </div>
+                <div class="manifesto-card">
+                    <h3>MENTAL HEALTHY AND WELLBEING</h3>
+                    <p>
+                        I am looking forward to create and enviroment where men feel safe, discusing stress,burnoutand also access counseling .
+                    </p>
+                </div>
+                <div class="manifesto-card">
+                    <h3>RELIABLE INTERNET CONNECTIVITY</h3>
+                    <p>
+                        With my school representative,we gone a enhance  stable and high speed internet in computer labs.
+                    </p>
+                </div>
+                <div class="manifesto-card">
+                    <h3>REDIFINING MASCULINITY IN TECH</h3>
+                    <p>
+                        I will bring an movement that normalize expressing vulnarability and Also encourage men to seek help when needed,breaking down harmful stereotypes and promoting a culture of openness and support within tech community.
+
+                    </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events -->
+    <section id="events" class="events">
+        <div class="container">
+            <h2>Upcoming Campaign Events</h2>
+            <div class="events-list">
+                <div class="event-card">
+                    <h3>MEGA RALLY -CTA POWER</h3>
+                    <div class="event-date">20 MARCH 2026, 2026 | 9:00 AM Onwards</div>
+                    <p>Join us for an exciting campaign event!</p>
+                </div>
+                
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Voter Registration Form -->
+    <section id="voter-form" class="voter-form">
+        <div class="container">
+            <h2 style="border-color: white; color: white;">Join Our Campaign</h2>
+            <div class="form-container">
+                <h3>Register Your Support & Contact Details</h3>
+                <div class="success-message" id="successMessage">
+                    ✓ Thank you! Your details have been received. We'll be in touch soon!
+                </div>
+                <div class="error-message" id="errorMessage">
+                    ✗ There was an error submitting the form. Please try again.
+                </div>
+                <form id="voterForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="Your full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phoneNumber">Phone Number</label>
+                        <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="07XX XXX XXX or +254...">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="course">Course / Field of Study</label>
+                        <select id="course" name="course" required>
+                            <option value="">-- Select your course --</option>
+                            <option value="BCS Y1">BCS Y1</option>
+                            <option value="BCS Y2">BCS Y2</option>
+                            <option value="BCS Y3">BCS Y3</option>
+                            <option value="BCS Y4">BCS Y4</option>
+                            <option value="BCSF Y1">BCSF Y1</option>
+                            <option value="BCSF Y2">BCSF Y2</option>
+                            <option value="BCSF Y3">BCSF Y3</option>
+                            <option value="BCSF Y4">BCSF Y4</option>
+                            <option value="BDS Y1">BDS Y1</option>
+                            <option value="BDS Y2">BDS Y2</option>
+                            <option value="BDS Y3">BDS Y3</option>
+                            <option value="BDS Y4">BDS Y4</option>
+                            <option value="BCT Y1">BCT Y1</option>
+                            <option value="BCT Y2">BCT Y2</option>
+                            <option value="BCT Y3">BCT Y3</option>
+                            <option value="BIT Y1">BIT Y1</option>
+                            <option value="BIT Y2">BIT Y2</option>
+                            <option value="BIT Y3">BIT Y3</option>
+                            <option value="BIT Y4">BIT Y4</option>
+                            <option value="BBIT Y1">BBIT Y1</option>
+                            <option value="BBIT Y2">BBIT Y2</option>
+                            <option value="BBIT Y3">BBIT Y3</option>
+                            <option value="BBIT Y4">BBIT Y4</option>
+                            <option value="BCJ Y1">BCJ Y1</option>
+                            <option value="BCJ Y2">BCJ Y2</option>
+                            <option value="BCJ Y3">BCJ Y3</option>
+                            <option value="BCJ Y4">BCJ Y4</option>
+                            <option value="BIS Y1">BIS Y1</option>
+                            <option value="BIS Y2">BIS Y2</option>
+                            <option value="BIS Y3">BIS Y3</option>
+                        </select>
+                    </div>
+
+                    <button type="submit">Submit Registration</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Brian Kipkurui Campaign. All rights reserved.</p>
+            <p>Vote for Leadership • Vote for Vision • Vote Brian Kipkurui for Men's Representative</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">For inquiries: contact@briankipkurui.campaign | +254 7XX XXX XXX</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('voterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get form data
+            const fullName = document.getElementById('fullName').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const course = document.getElementById('course').value;
+            const timestamp = new Date().toLocaleString();
+
+            // Prepare data for Google Apps Script
+            const data = {
+                fullName: fullName,
+                phoneNumber: phoneNumber,
+                course: course,
+                timestamp: timestamp
+            };
+
+            // Replace 'YOUR_GOOGLE_APPS_SCRIPT_URL' with your actual Web App URL
+            const googleAppsScriptUrl = 'https://script.google.com/macros/s/AKfycbxoqz65wPb3ciLZofNO0g2lnx0cBdpRdpjDx5eF815VHdit-MCmCnJGFxnDMwC4ejHuCQ/exec';
+
+            if (googleAppsScriptUrl === 'YOUR_GOOGLE_APPS_SCRIPT_URL') {
+                alert('Please configure the Google Apps Script URL in the form code before submitting. Instructions are provided in the README file.');
+                return;
+            }
+
+            // Send data to Google Apps Script
+            fetch(googleAppsScriptUrl, {
+                method: 'POST',
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                document.getElementById('successMessage').style.display = 'block';
+                document.getElementById('voterForm').reset();
+                setTimeout(() => {
+                    document.getElementById('successMessage').style.display = 'none';
+                }, 5000);
+            })
+            .catch(error => {
+                document.getElementById('errorMessage').style.display = 'block';
+                console.error('Error:', error);
+                setTimeout(() => {
+                    document.getElementById('errorMessage').style.display = 'none';
+                }, 5000);
+            });
+        });
+    </script>
+</body>
+</html>
